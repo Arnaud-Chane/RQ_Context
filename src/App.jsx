@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <MovieContext.Provider value={{ movies: movies }} >
+      <MovieContext.Provider value={{ movies, setMovies }} >
         <MoviesList />
       </MovieContext.Provider>
     </div>
