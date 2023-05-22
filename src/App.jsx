@@ -1,33 +1,17 @@
-import {useState} from 'react';
-import MoviesList from "./components/MoviesList";
-import MovieContext from "./contexts/MovieContext";
+import { useState } from 'react';
+import UserContext from "./contexts/UserContext";
+import UserProfile from "./components/UserProfile";
+
+import './App.css';
 
 function App() {
-  const [movies, setMovies] = useState([
-    {
-      movie_id: 1,
-      title: 'Harry Potter and the Sorcerers Stone',
-      release_year: 2001,
-    },
-    {
-      movie_id: 2,
-      title: 'Harry Potter and the Chamber of Secrets',
-      release_year: 2002,
-    },
-    {
-      movie_id: 3,
-      title: 'Harry Potter and the Prison of Azkaban',
-      release_year: 2004,
-    },
-  ]);
-
-
+  const [isOnline, setIsOnline] = useState(false);
 
   return (
     <div className="App">
-      <MovieContext.Provider value={{ movies, setMovies }} >
-        <MoviesList />
-      </MovieContext.Provider>
+      <UserContext.Provider value={{ isOnline, setIsOnline }} >
+        <UserProfile />
+      </UserContext.Provider>
     </div>
   )
 }
